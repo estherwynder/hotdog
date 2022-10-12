@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/chatrooms";
+
+body {
+  background-color: #181818;
+  font-family: 'Gothic A1', sans-serif;
+}
