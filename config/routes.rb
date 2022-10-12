@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :chatrooms, only: %i[index show]
   # root "articles#index"
+  resources :matches, except: %i[edit update] do
+    resources :chatrooms, only: %i[new create destroy]
+  end
 end
