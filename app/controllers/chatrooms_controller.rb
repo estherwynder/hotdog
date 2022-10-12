@@ -4,6 +4,6 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @chatroom = Chatroon.find(params[:id])
+    @chatroom = Chatroom.find(params[:id])
   end
 end

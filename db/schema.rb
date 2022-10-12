@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_141113) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_12_102511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,9 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_141113) do
     t.integer "age"
     t.text "about"
     t.text "interest"
-    t.bigint "match_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["match_id"], name: "index_users_on_match_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -64,5 +62,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_141113) do
   add_foreign_key "chatrooms", "users"
   add_foreign_key "matches", "chatrooms"
   add_foreign_key "matches", "users"
-  add_foreign_key "users", "matches"
 end
