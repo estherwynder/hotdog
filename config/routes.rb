@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :matches, except: %i[edit update] do
     resources :chatrooms, only: %i[new create destroy]
   end
+
+  resources :users
 end
